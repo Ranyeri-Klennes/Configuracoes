@@ -34,11 +34,11 @@ namespace Configuracoes
             this.btn_Voltar = new System.Windows.Forms.Button();
             this.btn_Confirmar = new System.Windows.Forms.Button();
             this.tb_NomeUsuario = new System.Windows.Forms.TextBox();
-            this.mtb_IdServidor = new System.Windows.Forms.MaskedTextBox();
+            this.mtb_IpServidor = new System.Windows.Forms.MaskedTextBox();
             this.mtb_Porta = new System.Windows.Forms.MaskedTextBox();
             this.lbl_NomeUsuario = new System.Windows.Forms.Label();
             this.lbl_NomeConexao = new System.Windows.Forms.Label();
-            this.lbl_IdServidor = new System.Windows.Forms.Label();
+            this.lbl_IpServidor = new System.Windows.Forms.Label();
             this.lbl_Porta = new System.Windows.Forms.Label();
             this.tb_NomeConexao = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
@@ -70,19 +70,19 @@ namespace Configuracoes
             this.tb_NomeUsuario.TabIndex = 0;
             this.tb_NomeUsuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // mtb_IdServidor
+            // mtb_IpServidor
             // 
-            this.mtb_IdServidor.Location = new System.Drawing.Point(153, 118);
-            this.mtb_IdServidor.Mask = "000.000.000.000";
-            this.mtb_IdServidor.Name = "mtb_IdServidor";
-            this.mtb_IdServidor.Size = new System.Drawing.Size(100, 25);
-            this.mtb_IdServidor.TabIndex = 2;
-            this.mtb_IdServidor.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.mtb_IpServidor.Location = new System.Drawing.Point(153, 118);
+            this.mtb_IpServidor.Mask = "000000000000";
+            this.mtb_IpServidor.Name = "mtb_IpServidor";
+            this.mtb_IpServidor.Size = new System.Drawing.Size(100, 25);
+            this.mtb_IpServidor.TabIndex = 2;
+            this.mtb_IpServidor.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // mtb_Porta
             // 
             this.mtb_Porta.Location = new System.Drawing.Point(153, 153);
-            this.mtb_Porta.Mask = "0.0.0.0";
+            this.mtb_Porta.Mask = "0000";
             this.mtb_Porta.Name = "mtb_Porta";
             this.mtb_Porta.Size = new System.Drawing.Size(56, 25);
             this.mtb_Porta.TabIndex = 3;
@@ -108,15 +108,15 @@ namespace Configuracoes
             this.lbl_NomeConexao.TabIndex = 7;
             this.lbl_NomeConexao.Text = "Nome da Conexão :";
             // 
-            // lbl_IdServidor
+            // lbl_IpServidor
             // 
-            this.lbl_IdServidor.AutoSize = true;
-            this.lbl_IdServidor.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_IdServidor.Location = new System.Drawing.Point(46, 122);
-            this.lbl_IdServidor.Name = "lbl_IdServidor";
-            this.lbl_IdServidor.Size = new System.Drawing.Size(104, 17);
-            this.lbl_IdServidor.TabIndex = 8;
-            this.lbl_IdServidor.Text = "Id do Servidor :";
+            this.lbl_IpServidor.AutoSize = true;
+            this.lbl_IpServidor.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_IpServidor.Location = new System.Drawing.Point(46, 122);
+            this.lbl_IpServidor.Name = "lbl_IpServidor";
+            this.lbl_IpServidor.Size = new System.Drawing.Size(104, 17);
+            this.lbl_IpServidor.TabIndex = 8;
+            this.lbl_IpServidor.Text = "Ip do Servidor :";
             // 
             // lbl_Porta
             // 
@@ -143,11 +143,11 @@ namespace Configuracoes
             this.ClientSize = new System.Drawing.Size(334, 261);
             this.Controls.Add(this.tb_NomeConexao);
             this.Controls.Add(this.lbl_Porta);
-            this.Controls.Add(this.lbl_IdServidor);
+            this.Controls.Add(this.lbl_IpServidor);
             this.Controls.Add(this.lbl_NomeConexao);
             this.Controls.Add(this.lbl_NomeUsuario);
             this.Controls.Add(this.mtb_Porta);
-            this.Controls.Add(this.mtb_IdServidor);
+            this.Controls.Add(this.mtb_IpServidor);
             this.Controls.Add(this.tb_NomeUsuario);
             this.Controls.Add(this.btn_Confirmar);
             this.Controls.Add(this.btn_Voltar);
@@ -170,11 +170,11 @@ namespace Configuracoes
         private Button btn_Voltar;
         private Button btn_Confirmar;
         private TextBox tb_NomeUsuario;
-        private MaskedTextBox mtb_IdServidor;
+        private MaskedTextBox mtb_IpServidor;
         private MaskedTextBox mtb_Porta;
         private Label lbl_NomeUsuario;
         private Label lbl_NomeConexao;
-        private Label lbl_IdServidor;
+        private Label lbl_IpServidor;
         private Label lbl_Porta;
         private TextBox tb_NomeConexao;
     }
