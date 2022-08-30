@@ -40,7 +40,9 @@ namespace Configuracoes
             this.lbl_NomeConexao = new System.Windows.Forms.Label();
             this.lbl_IpServidor = new System.Windows.Forms.Label();
             this.lbl_Porta = new System.Windows.Forms.Label();
-            this.tb_NomeConexao = new System.Windows.Forms.TextBox();
+            this.cb_NomeConexao = new System.Windows.Forms.ComboBox();
+            this.lbl_Senha = new System.Windows.Forms.Label();
+            this.tb_Senha = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btn_Voltar
@@ -58,51 +60,54 @@ namespace Configuracoes
             this.btn_Confirmar.Location = new System.Drawing.Point(226, 216);
             this.btn_Confirmar.Name = "btn_Confirmar";
             this.btn_Confirmar.Size = new System.Drawing.Size(86, 33);
-            this.btn_Confirmar.TabIndex = 4;
+            this.btn_Confirmar.TabIndex = 6;
             this.btn_Confirmar.Text = "Confirmar";
             this.btn_Confirmar.UseVisualStyleBackColor = true;
+            this.btn_Confirmar.Click += new System.EventHandler(this.btn_Confirmar_Click);
             // 
             // tb_NomeUsuario
             // 
-            this.tb_NomeUsuario.Location = new System.Drawing.Point(153, 50);
+            this.tb_NomeUsuario.Location = new System.Drawing.Point(168, 129);
             this.tb_NomeUsuario.Name = "tb_NomeUsuario";
-            this.tb_NomeUsuario.Size = new System.Drawing.Size(140, 25);
-            this.tb_NomeUsuario.TabIndex = 0;
+            this.tb_NomeUsuario.Size = new System.Drawing.Size(100, 25);
+            this.tb_NomeUsuario.TabIndex = 3;
             this.tb_NomeUsuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // mtb_IpServidor
             // 
-            this.mtb_IpServidor.Location = new System.Drawing.Point(153, 118);
+            this.mtb_IpServidor.Location = new System.Drawing.Point(168, 66);
             this.mtb_IpServidor.Mask = "000000000000";
             this.mtb_IpServidor.Name = "mtb_IpServidor";
             this.mtb_IpServidor.Size = new System.Drawing.Size(100, 25);
-            this.mtb_IpServidor.TabIndex = 2;
+            this.mtb_IpServidor.TabIndex = 1;
             this.mtb_IpServidor.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.mtb_IpServidor.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // mtb_Porta
             // 
-            this.mtb_Porta.Location = new System.Drawing.Point(153, 153);
+            this.mtb_Porta.Location = new System.Drawing.Point(168, 98);
             this.mtb_Porta.Mask = "0000";
             this.mtb_Porta.Name = "mtb_Porta";
             this.mtb_Porta.Size = new System.Drawing.Size(56, 25);
-            this.mtb_Porta.TabIndex = 3;
+            this.mtb_Porta.TabIndex = 2;
             this.mtb_Porta.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.mtb_Porta.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // lbl_NomeUsuario
             // 
             this.lbl_NomeUsuario.AutoSize = true;
             this.lbl_NomeUsuario.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_NomeUsuario.Location = new System.Drawing.Point(26, 54);
+            this.lbl_NomeUsuario.Location = new System.Drawing.Point(37, 133);
             this.lbl_NomeUsuario.Name = "lbl_NomeUsuario";
             this.lbl_NomeUsuario.Size = new System.Drawing.Size(124, 17);
-            this.lbl_NomeUsuario.TabIndex = 6;
+            this.lbl_NomeUsuario.TabIndex = 10;
             this.lbl_NomeUsuario.Text = "Nome do Usuário :";
             // 
             // lbl_NomeConexao
             // 
             this.lbl_NomeConexao.AutoSize = true;
             this.lbl_NomeConexao.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_NomeConexao.Location = new System.Drawing.Point(21, 88);
+            this.lbl_NomeConexao.Location = new System.Drawing.Point(32, 41);
             this.lbl_NomeConexao.Name = "lbl_NomeConexao";
             this.lbl_NomeConexao.Size = new System.Drawing.Size(129, 17);
             this.lbl_NomeConexao.TabIndex = 7;
@@ -112,7 +117,7 @@ namespace Configuracoes
             // 
             this.lbl_IpServidor.AutoSize = true;
             this.lbl_IpServidor.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_IpServidor.Location = new System.Drawing.Point(46, 122);
+            this.lbl_IpServidor.Location = new System.Drawing.Point(57, 70);
             this.lbl_IpServidor.Name = "lbl_IpServidor";
             this.lbl_IpServidor.Size = new System.Drawing.Size(104, 17);
             this.lbl_IpServidor.TabIndex = 8;
@@ -122,26 +127,46 @@ namespace Configuracoes
             // 
             this.lbl_Porta.AutoSize = true;
             this.lbl_Porta.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Porta.Location = new System.Drawing.Point(101, 157);
+            this.lbl_Porta.Location = new System.Drawing.Point(112, 103);
             this.lbl_Porta.Name = "lbl_Porta";
             this.lbl_Porta.Size = new System.Drawing.Size(49, 17);
             this.lbl_Porta.TabIndex = 9;
             this.lbl_Porta.Text = "Porta :";
             // 
-            // tb_NomeConexao
+            // cb_NomeConexao
             // 
-            this.tb_NomeConexao.Location = new System.Drawing.Point(153, 84);
-            this.tb_NomeConexao.Name = "tb_NomeConexao";
-            this.tb_NomeConexao.Size = new System.Drawing.Size(140, 25);
-            this.tb_NomeConexao.TabIndex = 10;
-            this.tb_NomeConexao.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.cb_NomeConexao.FormattingEnabled = true;
+            this.cb_NomeConexao.Location = new System.Drawing.Point(168, 34);
+            this.cb_NomeConexao.Name = "cb_NomeConexao";
+            this.cb_NomeConexao.Size = new System.Drawing.Size(100, 25);
+            this.cb_NomeConexao.TabIndex = 0;
+            // 
+            // lbl_Senha
+            // 
+            this.lbl_Senha.AutoSize = true;
+            this.lbl_Senha.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_Senha.Location = new System.Drawing.Point(113, 162);
+            this.lbl_Senha.Name = "lbl_Senha";
+            this.lbl_Senha.Size = new System.Drawing.Size(57, 17);
+            this.lbl_Senha.TabIndex = 11;
+            this.lbl_Senha.Text = "Senha : ";
+            // 
+            // tb_Senha
+            // 
+            this.tb_Senha.Location = new System.Drawing.Point(168, 159);
+            this.tb_Senha.Name = "tb_Senha";
+            this.tb_Senha.Size = new System.Drawing.Size(100, 25);
+            this.tb_Senha.TabIndex = 4;
+            this.tb_Senha.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // form_ConfigurarConexao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(334, 261);
-            this.Controls.Add(this.tb_NomeConexao);
+            this.Controls.Add(this.tb_Senha);
+            this.Controls.Add(this.lbl_Senha);
+            this.Controls.Add(this.cb_NomeConexao);
             this.Controls.Add(this.lbl_Porta);
             this.Controls.Add(this.lbl_IpServidor);
             this.Controls.Add(this.lbl_NomeConexao);
@@ -158,7 +183,7 @@ namespace Configuracoes
             this.Name = "form_ConfigurarConexao";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Confiigurar Conexão";
+            this.Text = "Configurar Conexão";
             this.Load += new System.EventHandler(this.form_ConfigurarConexao_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -176,7 +201,9 @@ namespace Configuracoes
         private Label lbl_NomeConexao;
         private Label lbl_IpServidor;
         private Label lbl_Porta;
-        private TextBox tb_NomeConexao;
+        private ComboBox cb_NomeConexao;
+        private Label lbl_Senha;
+        private TextBox tb_Senha;
     }
 }
 
