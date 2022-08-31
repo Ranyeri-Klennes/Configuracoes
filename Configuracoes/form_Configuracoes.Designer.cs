@@ -31,11 +31,12 @@ namespace Configuracoes
         {
             this.btn_ConfiguracoesGerais = new System.Windows.Forms.Button();
             this.btn_ConfigurarConexao = new System.Windows.Forms.Button();
+            this.btn_GerarChaveNFe = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_ConfiguracoesGerais
             // 
-            this.btn_ConfiguracoesGerais.Location = new System.Drawing.Point(80, 87);
+            this.btn_ConfiguracoesGerais.Location = new System.Drawing.Point(86, 56);
             this.btn_ConfiguracoesGerais.Name = "btn_ConfiguracoesGerais";
             this.btn_ConfiguracoesGerais.Size = new System.Drawing.Size(156, 35);
             this.btn_ConfiguracoesGerais.TabIndex = 0;
@@ -45,7 +46,7 @@ namespace Configuracoes
             // 
             // btn_ConfigurarConexao
             // 
-            this.btn_ConfigurarConexao.Location = new System.Drawing.Point(80, 138);
+            this.btn_ConfigurarConexao.Location = new System.Drawing.Point(86, 108);
             this.btn_ConfigurarConexao.Name = "btn_ConfigurarConexao";
             this.btn_ConfigurarConexao.Size = new System.Drawing.Size(156, 35);
             this.btn_ConfigurarConexao.TabIndex = 1;
@@ -53,11 +54,22 @@ namespace Configuracoes
             this.btn_ConfigurarConexao.UseVisualStyleBackColor = true;
             this.btn_ConfigurarConexao.Click += new System.EventHandler(this.btn_ConfigurarConexao_Click);
             // 
+            // btn_GerarChaveNFe
+            // 
+            this.btn_GerarChaveNFe.Location = new System.Drawing.Point(86, 159);
+            this.btn_GerarChaveNFe.Name = "btn_GerarChaveNFe";
+            this.btn_GerarChaveNFe.Size = new System.Drawing.Size(156, 35);
+            this.btn_GerarChaveNFe.TabIndex = 2;
+            this.btn_GerarChaveNFe.Text = "Gerar Chave NF-e";
+            this.btn_GerarChaveNFe.UseVisualStyleBackColor = true;
+            this.btn_GerarChaveNFe.Click += new System.EventHandler(this.btn_GerarChaveNFe_Click);
+            // 
             // form_Configuracoes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(334, 261);
+            this.Controls.Add(this.btn_GerarChaveNFe);
             this.Controls.Add(this.btn_ConfigurarConexao);
             this.Controls.Add(this.btn_ConfiguracoesGerais);
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -76,6 +88,7 @@ namespace Configuracoes
 
         private System.Windows.Forms.Button btn_ConfiguracoesGerais;
         private System.Windows.Forms.Button btn_ConfigurarConexao;
+        private System.Windows.Forms.Button btn_GerarChaveNFe;
     }
 }
 

@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace Configuracoes
 {
-    partial class form_ConfigurarConexao : Form
+    partial class form_ConfigurarConexao
     {
         /// <summary>
         ///  Required designer variable.
@@ -47,9 +47,9 @@ namespace Configuracoes
             // 
             // btn_Voltar
             // 
-            this.btn_Voltar.Location = new System.Drawing.Point(12, 216);
+            this.btn_Voltar.Location = new System.Drawing.Point(55, 216);
             this.btn_Voltar.Name = "btn_Voltar";
-            this.btn_Voltar.Size = new System.Drawing.Size(62, 33);
+            this.btn_Voltar.Size = new System.Drawing.Size(86, 33);
             this.btn_Voltar.TabIndex = 5;
             this.btn_Voltar.Text = "Voltar";
             this.btn_Voltar.UseVisualStyleBackColor = true;
@@ -57,7 +57,7 @@ namespace Configuracoes
             // 
             // btn_Confirmar
             // 
-            this.btn_Confirmar.Location = new System.Drawing.Point(226, 216);
+            this.btn_Confirmar.Location = new System.Drawing.Point(195, 216);
             this.btn_Confirmar.Name = "btn_Confirmar";
             this.btn_Confirmar.Size = new System.Drawing.Size(86, 33);
             this.btn_Confirmar.TabIndex = 6;
@@ -67,28 +67,35 @@ namespace Configuracoes
             // 
             // tb_NomeUsuario
             // 
-            this.tb_NomeUsuario.Location = new System.Drawing.Point(168, 129);
+            this.tb_NomeUsuario.Location = new System.Drawing.Point(163, 125);
             this.tb_NomeUsuario.Name = "tb_NomeUsuario";
-            this.tb_NomeUsuario.Size = new System.Drawing.Size(100, 25);
+            this.tb_NomeUsuario.Size = new System.Drawing.Size(118, 25);
             this.tb_NomeUsuario.TabIndex = 3;
             this.tb_NomeUsuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // mtb_IpServidor
             // 
-            this.mtb_IpServidor.Location = new System.Drawing.Point(168, 66);
+            this.mtb_IpServidor.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.mtb_IpServidor.Location = new System.Drawing.Point(163, 61);
             this.mtb_IpServidor.Mask = "000000000000";
             this.mtb_IpServidor.Name = "mtb_IpServidor";
-            this.mtb_IpServidor.Size = new System.Drawing.Size(100, 25);
+            this.mtb_IpServidor.PromptChar = ' ';
+            this.mtb_IpServidor.RejectInputOnFirstFailure = true;
+            this.mtb_IpServidor.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.mtb_IpServidor.Size = new System.Drawing.Size(118, 25);
             this.mtb_IpServidor.TabIndex = 1;
             this.mtb_IpServidor.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.mtb_IpServidor.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // mtb_Porta
             // 
-            this.mtb_Porta.Location = new System.Drawing.Point(168, 98);
+            this.mtb_Porta.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.mtb_Porta.Location = new System.Drawing.Point(163, 93);
             this.mtb_Porta.Mask = "0000";
             this.mtb_Porta.Name = "mtb_Porta";
-            this.mtb_Porta.Size = new System.Drawing.Size(56, 25);
+            this.mtb_Porta.PromptChar = ' ';
+            this.mtb_Porta.RejectInputOnFirstFailure = true;
+            this.mtb_Porta.Size = new System.Drawing.Size(118, 25);
             this.mtb_Porta.TabIndex = 2;
             this.mtb_Porta.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.mtb_Porta.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
@@ -97,7 +104,7 @@ namespace Configuracoes
             // 
             this.lbl_NomeUsuario.AutoSize = true;
             this.lbl_NomeUsuario.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_NomeUsuario.Location = new System.Drawing.Point(37, 133);
+            this.lbl_NomeUsuario.Location = new System.Drawing.Point(35, 128);
             this.lbl_NomeUsuario.Name = "lbl_NomeUsuario";
             this.lbl_NomeUsuario.Size = new System.Drawing.Size(124, 17);
             this.lbl_NomeUsuario.TabIndex = 10;
@@ -107,7 +114,7 @@ namespace Configuracoes
             // 
             this.lbl_NomeConexao.AutoSize = true;
             this.lbl_NomeConexao.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_NomeConexao.Location = new System.Drawing.Point(32, 41);
+            this.lbl_NomeConexao.Location = new System.Drawing.Point(29, 32);
             this.lbl_NomeConexao.Name = "lbl_NomeConexao";
             this.lbl_NomeConexao.Size = new System.Drawing.Size(129, 17);
             this.lbl_NomeConexao.TabIndex = 7;
@@ -117,7 +124,7 @@ namespace Configuracoes
             // 
             this.lbl_IpServidor.AutoSize = true;
             this.lbl_IpServidor.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_IpServidor.Location = new System.Drawing.Point(57, 70);
+            this.lbl_IpServidor.Location = new System.Drawing.Point(55, 64);
             this.lbl_IpServidor.Name = "lbl_IpServidor";
             this.lbl_IpServidor.Size = new System.Drawing.Size(104, 17);
             this.lbl_IpServidor.TabIndex = 8;
@@ -127,7 +134,7 @@ namespace Configuracoes
             // 
             this.lbl_Porta.AutoSize = true;
             this.lbl_Porta.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Porta.Location = new System.Drawing.Point(112, 103);
+            this.lbl_Porta.Location = new System.Drawing.Point(110, 96);
             this.lbl_Porta.Name = "lbl_Porta";
             this.lbl_Porta.Size = new System.Drawing.Size(49, 17);
             this.lbl_Porta.TabIndex = 9;
@@ -135,17 +142,22 @@ namespace Configuracoes
             // 
             // cb_NomeConexao
             // 
+            this.cb_NomeConexao.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cb_NomeConexao.FormattingEnabled = true;
-            this.cb_NomeConexao.Location = new System.Drawing.Point(168, 34);
+            this.cb_NomeConexao.Items.AddRange(new object[] {
+            "GCF",
+            "Emporium",
+            "GLPi"});
+            this.cb_NomeConexao.Location = new System.Drawing.Point(163, 28);
             this.cb_NomeConexao.Name = "cb_NomeConexao";
-            this.cb_NomeConexao.Size = new System.Drawing.Size(100, 25);
+            this.cb_NomeConexao.Size = new System.Drawing.Size(118, 25);
             this.cb_NomeConexao.TabIndex = 0;
             // 
             // lbl_Senha
             // 
             this.lbl_Senha.AutoSize = true;
             this.lbl_Senha.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Senha.Location = new System.Drawing.Point(113, 162);
+            this.lbl_Senha.Location = new System.Drawing.Point(104, 160);
             this.lbl_Senha.Name = "lbl_Senha";
             this.lbl_Senha.Size = new System.Drawing.Size(57, 17);
             this.lbl_Senha.TabIndex = 11;
@@ -153,11 +165,12 @@ namespace Configuracoes
             // 
             // tb_Senha
             // 
-            this.tb_Senha.Location = new System.Drawing.Point(168, 159);
+            this.tb_Senha.Location = new System.Drawing.Point(163, 156);
             this.tb_Senha.Name = "tb_Senha";
-            this.tb_Senha.Size = new System.Drawing.Size(100, 25);
+            this.tb_Senha.Size = new System.Drawing.Size(118, 25);
             this.tb_Senha.TabIndex = 4;
             this.tb_Senha.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tb_Senha.UseSystemPasswordChar = true;
             // 
             // form_ConfigurarConexao
             // 

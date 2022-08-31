@@ -52,8 +52,10 @@ namespace Configuracoes
             this.mtb_CNPJEmpresa.BackColor = System.Drawing.Color.White;
             this.mtb_CNPJEmpresa.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.mtb_CNPJEmpresa.Location = new System.Drawing.Point(99, 93);
-            this.mtb_CNPJEmpresa.Mask = "00000000000000";
+            this.mtb_CNPJEmpresa.Mask = "00.000.000/0000-00";
             this.mtb_CNPJEmpresa.Name = "mtb_CNPJEmpresa";
+            this.mtb_CNPJEmpresa.PromptChar = ' ';
+            this.mtb_CNPJEmpresa.RejectInputOnFirstFailure = true;
             this.mtb_CNPJEmpresa.Size = new System.Drawing.Size(130, 25);
             this.mtb_CNPJEmpresa.TabIndex = 0;
             this.mtb_CNPJEmpresa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;

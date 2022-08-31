@@ -11,6 +11,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="form_GerarChaveNFe.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="form_ConfigurarConexao.cs">
       <SubType>Form</SubType>
     </Compile>

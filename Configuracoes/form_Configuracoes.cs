@@ -17,6 +17,10 @@ namespace Configuracoes
             InitializeComponent();
         }
 
+
+
+
+        //Botão para abrir a janela de Configurações Gerais -----------------------
         private void btn_ConfiguracoesGerais_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -28,7 +32,12 @@ namespace Configuracoes
         {
             Application.Run(new form_ConfiguracoesGerais());
         }
+        //------------------------------------------------------------------------
 
+
+
+
+        //Botão para abrir a janela de Configurar Conexão ------------------------
         private void btn_ConfigurarConexao_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -40,5 +49,23 @@ namespace Configuracoes
         {
             Application.Run(new form_ConfigurarConexao());
         }
+        //-----------------------------------------------------------------------
+
+
+
+
+        //Botão para abrir a janela de Gerar Chave NF-e ------------------------
+        private void btn_GerarChaveNFe_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Thread th = new Thread(abrirGerarChaveNFe);
+            th.SetApartmentState(ApartmentState.STA);
+            th.Start();
+        }
+        private void abrirGerarChaveNFe()
+        {
+            Application.Run(new form_GerarChaveNFe());
+        }
+        //-----------------------------------------------------------------------
     }
 }
