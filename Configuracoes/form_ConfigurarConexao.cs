@@ -103,13 +103,9 @@ namespace Configuracoes
                 
                 MessageBox.Show("Conectado!");
             }
-
-            //https://www.youtube.com/watch?v=L5DLbVuA7IQ
             
         }
         //Validando informações obrigatórias -----------------------
-        //https://www.youtube.com/watch?v=jsVLeQF9IuY&list=PLW83fkbt3BqnNZuIrGHBl4Il9iR-_-pOF&index=58
-        //https://www.youtube.com/watch?v=a1yb5g3wDYk
         private bool ValidarForm()
         {
             bool FormValido = true;

@@ -60,7 +60,7 @@ namespace Configuracoes
             this.btn_GerarChaveNFe.Name = "btn_GerarChaveNFe";
             this.btn_GerarChaveNFe.Size = new System.Drawing.Size(156, 35);
             this.btn_GerarChaveNFe.TabIndex = 2;
-            this.btn_GerarChaveNFe.Text = "Gerar Chave NF-e";
+            this.btn_GerarChaveNFe.Text = "Gerar Chave";
             this.btn_GerarChaveNFe.UseVisualStyleBackColor = true;
             this.btn_GerarChaveNFe.Click += new System.EventHandler(this.btn_GerarChaveNFe_Click);
             // 
