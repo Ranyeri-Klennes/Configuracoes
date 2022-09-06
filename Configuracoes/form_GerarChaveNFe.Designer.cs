@@ -31,7 +31,7 @@ namespace Configuracoes
             // 
             this.lbl_CNPJ.AutoSize = true;
             this.lbl_CNPJ.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_CNPJ.Location = new System.Drawing.Point(6, 59);
+            this.lbl_CNPJ.Location = new System.Drawing.Point(6, 61);
             this.lbl_CNPJ.Name = "lbl_CNPJ";
             this.lbl_CNPJ.Size = new System.Drawing.Size(47, 17);
             this.lbl_CNPJ.TabIndex = 0;
@@ -41,7 +41,7 @@ namespace Configuracoes
             // 
             this.mtb_CNPJ.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             this.mtb_CNPJ.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.mtb_CNPJ.Location = new System.Drawing.Point(55, 55);
+            this.mtb_CNPJ.Location = new System.Drawing.Point(55, 57);
             this.mtb_CNPJ.Mask = "00.000.000/0000-00";
             this.mtb_CNPJ.Name = "mtb_CNPJ";
             this.mtb_CNPJ.PromptChar = ' ';
@@ -55,8 +55,8 @@ namespace Configuracoes
             this.mtb_Data.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             this.mtb_Data.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.mtb_Data.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Overwrite;
-            this.mtb_Data.Location = new System.Drawing.Point(231, 53);
-            this.mtb_Data.Mask = "00/00/0000";
+            this.mtb_Data.Location = new System.Drawing.Point(231, 55);
+            this.mtb_Data.Mask = "00/00";
             this.mtb_Data.Name = "mtb_Data";
             this.mtb_Data.PromptChar = ' ';
             this.mtb_Data.Size = new System.Drawing.Size(93, 23);
@@ -69,7 +69,7 @@ namespace Configuracoes
             // 
             this.lbl_Data.AutoSize = true;
             this.lbl_Data.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Data.Location = new System.Drawing.Point(185, 56);
+            this.lbl_Data.Location = new System.Drawing.Point(185, 58);
             this.lbl_Data.Name = "lbl_Data";
             this.lbl_Data.Size = new System.Drawing.Size(45, 17);
             this.lbl_Data.TabIndex = 3;
@@ -78,7 +78,7 @@ namespace Configuracoes
             // btn_Gerar
             // 
             this.btn_Gerar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_Gerar.Location = new System.Drawing.Point(123, 215);
+            this.btn_Gerar.Location = new System.Drawing.Point(124, 214);
             this.btn_Gerar.Name = "btn_Gerar";
             this.btn_Gerar.Size = new System.Drawing.Size(86, 33);
             this.btn_Gerar.TabIndex = 7;
@@ -89,7 +89,7 @@ namespace Configuracoes
             // btn_Voltar
             // 
             this.btn_Voltar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_Voltar.Location = new System.Drawing.Point(12, 215);
+            this.btn_Voltar.Location = new System.Drawing.Point(12, 214);
             this.btn_Voltar.Name = "btn_Voltar";
             this.btn_Voltar.Size = new System.Drawing.Size(86, 33);
             this.btn_Voltar.TabIndex = 9;
@@ -100,7 +100,7 @@ namespace Configuracoes
             // btn_Copiar
             // 
             this.btn_Copiar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_Copiar.Location = new System.Drawing.Point(238, 215);
+            this.btn_Copiar.Location = new System.Drawing.Point(238, 214);
             this.btn_Copiar.Name = "btn_Copiar";
             this.btn_Copiar.Size = new System.Drawing.Size(86, 33);
             this.btn_Copiar.TabIndex = 8;
@@ -141,16 +141,17 @@ namespace Configuracoes
             "MT",
             "GO",
             "DF"});
-            this.cb_UF.Location = new System.Drawing.Point(41, 20);
+            this.cb_UF.Location = new System.Drawing.Point(41, 22);
             this.cb_UF.Name = "cb_UF";
-            this.cb_UF.Size = new System.Drawing.Size(43, 23);
+            this.cb_UF.Size = new System.Drawing.Size(40, 23);
             this.cb_UF.TabIndex = 0;
+            this.cb_UF.SelectedIndexChanged += new System.EventHandler(this.cb_UF_SelectedIndexChanged);
             // 
             // lbl_UF
             // 
             this.lbl_UF.AutoSize = true;
             this.lbl_UF.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_UF.Location = new System.Drawing.Point(7, 24);
+            this.lbl_UF.Location = new System.Drawing.Point(7, 26);
             this.lbl_UF.Name = "lbl_UF";
             this.lbl_UF.Size = new System.Drawing.Size(32, 17);
             this.lbl_UF.TabIndex = 8;
@@ -158,10 +159,10 @@ namespace Configuracoes
             // 
             // tb_Serie
             // 
-            this.tb_Serie.Location = new System.Drawing.Point(277, 20);
-            this.tb_Serie.MaxLength = 1;
+            this.tb_Serie.Location = new System.Drawing.Point(277, 22);
+            this.tb_Serie.MaxLength = 3;
             this.tb_Serie.Name = "tb_Serie";
-            this.tb_Serie.Size = new System.Drawing.Size(30, 23);
+            this.tb_Serie.Size = new System.Drawing.Size(45, 23);
             this.tb_Serie.TabIndex = 2;
             this.tb_Serie.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -169,7 +170,7 @@ namespace Configuracoes
             // 
             this.lbl_Serie.AutoSize = true;
             this.lbl_Serie.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Serie.Location = new System.Drawing.Point(230, 23);
+            this.lbl_Serie.Location = new System.Drawing.Point(230, 25);
             this.lbl_Serie.Name = "lbl_Serie";
             this.lbl_Serie.Size = new System.Drawing.Size(46, 17);
             this.lbl_Serie.TabIndex = 10;
@@ -179,7 +180,7 @@ namespace Configuracoes
             // 
             this.lbl_Emissao.AutoSize = true;
             this.lbl_Emissao.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Emissao.Location = new System.Drawing.Point(7, 96);
+            this.lbl_Emissao.Location = new System.Drawing.Point(7, 98);
             this.lbl_Emissao.Name = "lbl_Emissao";
             this.lbl_Emissao.Size = new System.Drawing.Size(66, 17);
             this.lbl_Emissao.TabIndex = 12;
@@ -191,18 +192,19 @@ namespace Configuracoes
             this.cb_Emissao.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cb_Emissao.FormattingEnabled = true;
             this.cb_Emissao.Items.AddRange(new object[] {
-            "CONTIGÊNCIA",
-            "NORMAL"});
-            this.cb_Emissao.Location = new System.Drawing.Point(74, 93);
+            "NORMAL",
+            "CONTIGÊNCIA"});
+            this.cb_Emissao.Location = new System.Drawing.Point(74, 95);
             this.cb_Emissao.Name = "cb_Emissao";
             this.cb_Emissao.Size = new System.Drawing.Size(113, 23);
             this.cb_Emissao.TabIndex = 5;
+            this.cb_Emissao.SelectedIndexChanged += new System.EventHandler(this.cb_Emissao_SelectedIndexChanged);
             // 
             // lbl_NF
             // 
             this.lbl_NF.AutoSize = true;
             this.lbl_NF.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_NF.Location = new System.Drawing.Point(96, 23);
+            this.lbl_NF.Location = new System.Drawing.Point(93, 25);
             this.lbl_NF.Name = "lbl_NF";
             this.lbl_NF.Size = new System.Drawing.Size(33, 17);
             this.lbl_NF.TabIndex = 14;
@@ -210,7 +212,7 @@ namespace Configuracoes
             // 
             // tb_NF
             // 
-            this.tb_NF.Location = new System.Drawing.Point(130, 20);
+            this.tb_NF.Location = new System.Drawing.Point(127, 22);
             this.tb_NF.MaxLength = 6;
             this.tb_NF.Name = "tb_NF";
             this.tb_NF.Size = new System.Drawing.Size(88, 23);
@@ -221,7 +223,7 @@ namespace Configuracoes
             // 
             this.lbl_Modelo.AutoSize = true;
             this.lbl_Modelo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Modelo.Location = new System.Drawing.Point(191, 96);
+            this.lbl_Modelo.Location = new System.Drawing.Point(191, 98);
             this.lbl_Modelo.Name = "lbl_Modelo";
             this.lbl_Modelo.Size = new System.Drawing.Size(63, 17);
             this.lbl_Modelo.TabIndex = 16;
@@ -236,21 +238,26 @@ namespace Configuracoes
             this.cb_Modelo.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cb_Modelo.FormattingEnabled = true;
             this.cb_Modelo.Items.AddRange(new object[] {
-            "NF-e",
-            "NFC-e"});
-            this.cb_Modelo.Location = new System.Drawing.Point(255, 92);
+            "NF-E",
+            "NFC-E",
+            "CT-E",
+            "MDF-E"});
+            this.cb_Modelo.Location = new System.Drawing.Point(255, 94);
             this.cb_Modelo.Name = "cb_Modelo";
             this.cb_Modelo.Size = new System.Drawing.Size(69, 23);
             this.cb_Modelo.TabIndex = 6;
+            this.cb_Modelo.SelectedIndexChanged += new System.EventHandler(this.cb_Modelo_SelectedIndexChanged);
             // 
             // rtb_NFe
             // 
+            this.rtb_NFe.AutoWordSelection = true;
             this.rtb_NFe.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.rtb_NFe.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.rtb_NFe.Location = new System.Drawing.Point(2, 157);
+            this.rtb_NFe.Location = new System.Drawing.Point(2, 158);
             this.rtb_NFe.MaxLength = 44;
             this.rtb_NFe.Multiline = false;
             this.rtb_NFe.Name = "rtb_NFe";
+            this.rtb_NFe.ReadOnly = true;
             this.rtb_NFe.ShortcutsEnabled = false;
             this.rtb_NFe.Size = new System.Drawing.Size(330, 33);
             this.rtb_NFe.TabIndex = 20;

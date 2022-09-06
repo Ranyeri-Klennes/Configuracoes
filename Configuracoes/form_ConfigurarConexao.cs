@@ -63,13 +63,13 @@ namespace Configuracoes
         private void btn_Confirmar_Click(object sender, EventArgs e)
         {
   
-            //Conexão com o db --------------------------------------------------
+            //Conexão com o db-------------------
             try
             {
                 conexao = new MySqlConnection("server=localhost;database=db_configuracoes;username=root;password=root;port=3306"); //Conectar db
 
                 string inserirDados = "INSERT INTO tb_configurarconexao (nomeUsuario, nomeConexao, ipServidor, porta, senha)" + "VALUES" + "('" + tb_NomeUsuario.Text + "','" + cb_NomeConexao.Text + "','" + mtb_IpServidor.Text + "','" + mtb_Porta.Text + "','" + tb_Senha.Text + "')"; //Inserir os dados no db
-
+                    
                 MySqlCommand comando = new MySqlCommand(inserirDados, conexao);
 
                 conexao.Open();
@@ -85,7 +85,7 @@ namespace Configuracoes
             {
                 conexao.Close();
             }
-            //-----------------------------------------------------------------
+            //-------------------------------------
 
 
 
@@ -95,11 +95,11 @@ namespace Configuracoes
             {
                 using (StreamWriter txt_DadoArmazenado = new StreamWriter(@"C:\DB_Configurações\DadoArmazenado.txt"))
                 
-                    txt_DadoArmazenado.WriteLine("Nome da Conexão: " + cb_NomeConexao.Text + "\n" + 
-                    "Ip do Servidor: " + mtb_IpServidor.Text + "\n" + 
-                    "Porta: " + mtb_Porta.Text + "\n" +
-                    "Nome do Usuário: " + tb_NomeUsuario.Text + "\n" +
-                    "Senha: " + tb_Senha.Text);
+                    txt_DadoArmazenado.WriteLine("Nome da Conexão: " + cb_NomeConexao.Text + "\n" 
+                        + "Ip do Servidor: " + mtb_IpServidor.Text + "\n" 
+                        + "Porta: " + mtb_Porta.Text + "\n" 
+                        +"Nome do Usuário: " + tb_NomeUsuario.Text + "\n" 
+                        +"Senha: " + tb_Senha.Text);
                 
                 MessageBox.Show("Conectado!");
             }
