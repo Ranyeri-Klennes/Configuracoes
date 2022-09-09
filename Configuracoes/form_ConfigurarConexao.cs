@@ -95,11 +95,7 @@ namespace Configuracoes
             {
                 using (StreamWriter txt_DadoArmazenado = new StreamWriter(@"C:\DB_Configurações\DadoArmazenado.txt"))
                 
-                    txt_DadoArmazenado.WriteLine("Nome da Conexão: " + cb_NomeConexao.Text + "\n" 
-                        + "Ip do Servidor: " + mtb_IpServidor.Text + "\n" 
-                        + "Porta: " + mtb_Porta.Text + "\n" 
-                        +"Nome do Usuário: " + tb_NomeUsuario.Text + "\n" 
-                        +"Senha: " + tb_Senha.Text);
+                    txt_DadoArmazenado.WriteLine($"Nome da Conexão: {cb_NomeConexao.Text}\n Ip do Servidor: {mtb_IpServidor.Text} \n Porta: {mtb_Porta.Text}\n Nome do Usuário: {tb_NomeUsuario.Text} \n Senha: {tb_Senha.Text}");
                 
                 MessageBox.Show("Conectado!");
             }

@@ -14,12 +14,15 @@ using System.Windows.Forms;
 namespace Configuracoes
 {
     public partial class form_GerarChaveNFe : Form
-    {
+    {        
+        private const string NFE = "NF-E";
+        private const string NFCE = "NFC-E";
+        private const string CTE = "CT-E";
+        private const string MDFE = "MDF-E";
         public form_GerarChaveNFe()
         {
             InitializeComponent();
         }
-        #region Tela Principal
         private void form_GerarChaveNFe_Load(object sender, EventArgs e)
         {
             //Criar diretório de armazenamento automatico ---------------------------------
@@ -35,32 +38,9 @@ namespace Configuracoes
             }
             //-----------------------------------------------------------------------------
 
-        } 
-        #endregion
-        
-        #region Campos
-        private void cb_UF_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //Códigos UFs
-            int RO = 11, AC = 12, AM = 13, RR = 14, PA = 15, AP = 16, TO = 17, MA = 21, PI = 22, CE = 23, RN = 24, PB = 25, PE = 26, AL = 27, SE = 28, BA = 29, MG = 31, ES = 32, RJ = 33, SP = 35, PR = 41, SC = 42, RS = 43, MS = 50, MT = 51, GO = 52, DF = 53;
-        }
-        private void cb_Modelo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //int "NF - E" = 55,"NFC - E" = 65, "CT - E" = 57, "MDF - E" = 25;
-            //int "NFE" = 55, "NFCE"= 65, "CTE" = 57, "MDFE" = 25;
-        }
-        private void cb_Emissao_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cb_Emissao = "NORMAL")
-            {
-                cb_Emissao = 1;
-            }
-            else cb_Emissao = 9;
-        }
-
-            #endregion}
-
+        } //Janela Principal
         #region Botões
+        #region btn_Voltar
         private void btn_Voltar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -72,69 +52,152 @@ namespace Configuracoes
         {
             Application.Run(new form_Configuracoes());
         }
-
+        #endregion
         private void btn_Gerar_Click(object sender, EventArgs e)
         {
-            //https://www.youtube.com/watch?v=MR1xYaNAnPc 
-            int  cb_UF, tb_NF, tb_Serie, mtb_CNPJ, mtb_Data, cb_Emissao,cb_Modelo;
-
             if (ValidarForm())
             {
-                //Armazenando dados em um .txt---------------------
-                using (StreamWriter txt_DadoArmazenado = new StreamWriter(@"C:\DB_Configurações\DadoArmazenado.txt"))
-                    
-                txt_DadoArmazenado.WriteLine("UF: " + cb_UF.Text + "\n" 
-                    + "NF: "+ tb_NF.Text + "\n" 
-                    + "SÉRIE: " + tb_Serie.Text + "\n" 
-                    + "CNPJ: " + mtb_CNPJ.Text + "\n" 
-                    + "AA/MM: " + mtb_Data.Text + "\n" 
-                    + "EMISSÃO: " + cb_Emissao.Text + "\n" 
-                    + "MODELO: " + cb_Modelo.Text);
-                //-------------------------------------------------
+                int valorModelo = retornarValorModelo(cb_Modelo.Text);
+                int valorUF = retornarValorUF(cb_UF.Text);
+                int valorEmissao = retornarValorEmissao(cb_Emissao.Text);
+            #region Armazenando dados em um .txt
+            using (StreamWriter txt_DadoArmazenado = new StreamWriter(@"C:\DB_Configurações\DadoArmazenado.txt"))
+            txt_DadoArmazenado.WriteLine($"UF: {valorUF} \nNF: {tb_NF.Text} \nSÉRIE: {tb_Serie.Text} \nCNPJ: {mtb_CNPJ.Text} \nAAAA/MM: {mtb_Data.Text} \nEMISSÃO: {valorEmissao} \nMODELO: {valorModelo}");
+                rtb_NFe.Text = $"{valorUF}{tb_NF.Text}{tb_Serie.Text}{mtb_CNPJ.Text}{mtb_Data.Text}{valorEmissao}{valorModelo}";
+            #endregion
             }
         }
-        #region Validando Campos
+        private int retornarValorEmissao(string valorEmissao)
+        {
+            switch (valorEmissao)
+            {
+                case "CONTIGÊNCIA":
+                    return 9;
+                case "NORMAL":
+                    return 1;
+                default:
+                    return 0;
+            }
+        }//Aplicando valores nas Emissões
+        private int retornarValorUF(string valorUF)
+        {
+            switch (valorUF)
+            {
+                case "RO":
+                    return 11;
+                case "AC":
+                    return 12;
+                case "AM":
+                    return 13;
+                case "RR":
+                    return 14;
+                case "PA":
+                    return 15;
+                case "AP":
+                    return 16;
+                case "TO":
+                    return 17;
+                case "MA":
+                    return 21;
+                case "PI":
+                    return 22;
+                case "CE":
+                    return 23;
+                case "RN":
+                    return 24;
+                case "PB":
+                    return 25;
+                case "PE":
+                    return 26;
+                case "AL":
+                    return 27;
+                case "SE":
+                    return 28;
+                case "BA":
+                    return 29;
+                case "MG":
+                    return 31;
+                case "ES":
+                    return 32;
+                case "RJ":
+                    return 33;
+                case "SP":
+                    return 35;
+                case "PR":
+                    return 41;
+                case "SC":
+                    return 42;
+                case "RS":
+                    return 43;
+                case "MS":
+                    return 50;
+                case "MT":
+                    return 51;
+                case "GO":
+                    return 52;
+                case "DF":
+                    return 53;
+                default:
+                    return 0;
+            }
+        }//Aplicando valores nas UFs
+        private int retornarValorModelo(string valorModelo)
+        {
+            switch (valorModelo)
+            {
+                case NFE:
+                    return 55;
+                case NFCE:
+                    return 65;
+                case CTE:
+                    return 57;
+                case MDFE:
+                    return 25;
+                default:
+                    return 0;
+            }
+        }//Aplicando valores naos Modelos
         private bool ValidarForm()
         {
-            bool FormValido = true;
+             bool FormValido = true;
 
-            if (cb_UF.Text == "")
+            if (cb_UF.Text == string.Empty)
             {
                 MessageBox.Show("Informe o UF do Estado!");
                 cb_UF.Focus();
                 FormValido = false;
             }
-            else if (tb_NF.Text == "")
+            else if (tb_NF.Text == string.Empty)
             {
                 MessageBox.Show("Informe o número da NF!");
                 tb_NF.Focus();
                 FormValido = false;
             }
-            else if (tb_Serie.Text == "")
+            else if (tb_Serie.Text == string.Empty)
             {
                 MessageBox.Show("Informe o número de Série!");
                 tb_Serie.Focus();
                 FormValido = false;
             }
-            else if (mtb_CNPJ.Text == "")
+            else if (mtb_CNPJ.Text == string.Empty)
             {
                 MessageBox.Show("Informe o CNPJ!");
                 mtb_CNPJ.Focus();
                 FormValido = false;
             }
-            else if (mtb_Data.Text == "")
+            else if (mtb_Data.Text == string.Empty)
             {
                 MessageBox.Show("Informe a Data!");
                 mtb_Data.Focus();
                 FormValido = false;
             }
-            else if (cb_Emissao.Text == "")
+            else if (cb_Emissao.Text == string.Empty)
             {
                 MessageBox.Show("Informe a forma de Emissão!");
                 cb_Emissao.Focus();
                 FormValido = false;
             }
-            else if (cb_Modelo.Text == "")
+            else if (string.IsNullOrEmpty(cb_Modelo.Text))
             {
                 MessageBox.Show("Informe o Modelo do documento!");
                 cb_Modelo.Focus();
@@ -142,18 +205,14 @@ namespace Configuracoes
             }
             else FormValido = true;
             return FormValido;
-        }
-        #endregion
-
+        }//Validando Campos
         private void btn_copiar_Click(object sender, EventArgs e)
         {
             //btn_copiar.DialogResult = DialogResult.Copiado!;
             //O botão ao clicado tem que mudar o nome.
-
-
+            
+            //rtb_NFe.Copy();
         }
         #endregion
-
-
     }
 }
