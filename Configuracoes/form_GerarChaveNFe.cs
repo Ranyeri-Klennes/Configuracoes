@@ -9,37 +9,21 @@ using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 
-//https://enotas.com.br/blog/tipos-de-contingencia/#
+//https://pt.activebarcode.com/codes/checkdigit/modulo11.html
 //https://www.invoisys.com.br/blog/como-e-formada-a-chave-de-acesso/
 namespace Configuracoes
 {
     public partial class form_GerarChaveNFe : Form
-    {        
+    {
         private const string NFE = "NF-E";
         private const string NFCE = "NFC-E";
         private const string CTE = "CT-E";
         private const string MDFE = "MDF-E";
+
         public form_GerarChaveNFe()
         {
             InitializeComponent();
         }
-        private void form_GerarChaveNFe_Load(object sender, EventArgs e)
-        {
-            //Criar diretório de armazenamento automatico ---------------------------------
-            DirectoryInfo dir_Armazenamento = new DirectoryInfo(@"C:\DB_Configurações");
-
-            if (dir_Armazenamento.Exists)
-            {
-                return;
-            }
-            else
-            {
-                dir_Armazenamento.Create();
-            }
-            //-----------------------------------------------------------------------------
-
-        } //Janela Principal
-        #region Botões
         #region btn_Voltar
         private void btn_Voltar_Click(object sender, EventArgs e)
         {
@@ -55,30 +39,29 @@ namespace Configuracoes
         #endregion
         private void btn_Gerar_Click(object sender, EventArgs e)
         {
+
             if (ValidarForm())
             {
+                Random codNumerico = new Random();
                 int valorModelo = retornarValorModelo(cb_Modelo.Text);
                 int valorUF = retornarValorUF(cb_UF.Text);
                 int valorEmissao = retornarValorEmissao(cb_Emissao.Text);
-            #region Armazenando dados em um .txt
-            using (StreamWriter txt_DadoArmazenado = new StreamWriter(@"C:\DB_Configurações\DadoArmazenado.txt"))
-            txt_DadoArmazenado.WriteLine($"UF: {valorUF} \nNF: {tb_NF.Text} \nSÉRIE: {tb_Serie.Text} \nCNPJ: {mtb_CNPJ.Text} \nAAAA/MM: {mtb_Data.Text} \nEMISSÃO: {valorEmissao} \nMODELO: {valorModelo}");
-                rtb_NFe.Text = $"{valorUF}{tb_NF.Text}{tb_Serie.Text}{mtb_CNPJ.Text}{mtb_Data.Text}{valorEmissao}{valorModelo}";
-            #endregion
+                int valorDV = retornaValorDV(rtb_NFe.Text);
+                #region Armazenando dados em um .txt
+                using (StreamWriter txt_DadoArmazenado = new StreamWriter(@"C:\DB_Configurações\DadoArmazenado.txt"))
+                    txt_DadoArmazenado.Write(rtb_NFe.Text = 
+                    $"{valorUF}" + 
+                    $"{mtb_Data.Text}" +
+                    $"{mtb_CNPJ.Text}" +
+                    $"{valorModelo}" +
+                    $"{tb_Serie.Text}" +
+                    $"{tb_NF.Text}" +
+                    $"{valorEmissao}" +
+                    $"{codNumerico.Next(0, 99999999)}" +
+                    $"{valorDV}");
+                #endregion 
             }
         }
-        private int retornarValorEmissao(string valorEmissao)
-        {
-            switch (valorEmissao)
-            {
-                case "CONTIGÊNCIA":
-                    return 9;
-                case "NORMAL":
-                    return 1;
-                default:
-                    return 0;
-            }
-        }//Aplicando valores nas Emissões
         private int retornarValorUF(string valorUF)
         {
             switch (valorUF)
@@ -141,6 +124,18 @@ namespace Configuracoes
                     return 0;
             }
         }//Aplicando valores nas UFs
+        private int retornarValorEmissao(string valorEmissao)
+        {
+            switch (valorEmissao)
+            {
+                case "CONTIGÊNCIA":
+                    return 9;
+                case "NORMAL":
+                    return 1;
+                default:
+                    return 0;
+            }
+        }//Aplicando valores nas Emissões
         private int retornarValorModelo(string valorModelo)
         {
             switch (valorModelo)
@@ -157,9 +152,32 @@ namespace Configuracoes
                     return 0;
             }
         }//Aplicando valores naos Modelos
+        private int retornaValorDV(string valorDV)
+        {
+            int[] DV = new int[6] { 2, 3, 4, 5, 6, 7 };
+
+            string[] chave43 = rtb_NFe.Text.Split();
+            IEnumerable<int> chave43_int = chave43.Select(int.Parse);
+
+            Console.Write(chave43_int);
+
+            //for (int i = 0; i < chave43.Length; i++)
+            //{
+            //    for(int j =0; j < i; j++)
+            //    {
+            //        DV[j] * 
+            //    }
+            //}
+            //foreach (var item in chave43)
+            //{
+
+            //}
+
+            return 0;
+        }
         private bool ValidarForm()
         {
-             bool FormValido = true;
+            bool FormValido = true;
 
             if (cb_UF.Text == string.Empty)
             {
@@ -210,9 +228,8 @@ namespace Configuracoes
         {
             //btn_copiar.DialogResult = DialogResult.Copiado!;
             //O botão ao clicado tem que mudar o nome.
-            
+
             //rtb_NFe.Copy();
         }
-        #endregion
     }
 }
