@@ -19,7 +19,6 @@ namespace Configuracoes
         private const string NFCE = "NFC-E";
         private const string CTE = "CT-E";
         private const string MDFE = "MDF-E";
-
         public form_GerarChaveNFe()
         {
             InitializeComponent();
@@ -46,19 +45,11 @@ namespace Configuracoes
                 int valorModelo = retornarValorModelo(cb_Modelo.Text);
                 int valorUF = retornarValorUF(cb_UF.Text);
                 int valorEmissao = retornarValorEmissao(cb_Emissao.Text);
-                int valorDV = retornaValorDV(rtb_NFe.Text);
+                string valor = $"{valorUF}{mtb_Data.Text}{mtb_CNPJ.Text}{valorModelo}{tb_Serie.Text}{tb_NF.Text}{valorEmissao}{codNumerico.Next(10000000, 99999999)}";
+                string valorDV = retornaValorDV(valor);
                 #region Armazenando dados em um .txt
                 using (StreamWriter txt_DadoArmazenado = new StreamWriter(@"C:\DB_Configurações\DadoArmazenado.txt"))
-                    txt_DadoArmazenado.Write(rtb_NFe.Text = 
-                    $"{valorUF}" + 
-                    $"{mtb_Data.Text}" +
-                    $"{mtb_CNPJ.Text}" +
-                    $"{valorModelo}" +
-                    $"{tb_Serie.Text}" +
-                    $"{tb_NF.Text}" +
-                    $"{valorEmissao}" +
-                    $"{codNumerico.Next(0, 99999999)}" +
-                    $"{valorDV}");
+                    txt_DadoArmazenado.Write(rtb_NFe.Text = valorDV);
                 #endregion 
             }
         }
@@ -152,28 +143,44 @@ namespace Configuracoes
                     return 0;
             }
         }//Aplicando valores naos Modelos
-        private int retornaValorDV(string valorDV)
+        private string retornaValorDV(string chave)
         {
-            int[] DV = new int[6] { 2, 3, 4, 5, 6, 7 };
+            //char[] chave43 = valorDV.ToCharArray();
+            //int[] DV = new int[] { 2, 3, 4, 5, 6, 7 };
 
-            string[] chave43 = rtb_NFe.Text.Split();
-            IEnumerable<int> chave43_int = chave43.Select(int.Parse);
-
-            Console.Write(chave43_int);
-
+            //int DVCount = 0;
+            //string result = string.Empty;
             //for (int i = 0; i < chave43.Length; i++)
             //{
-            //    for(int j =0; j < i; j++)
-            //    {
-            //        DV[j] * 
-            //    }
-            //}
-            //foreach (var item in chave43)
-            //{
+            //    result += (Convert.ToInt32((chave43[i]) * DV[DVCount])/9).ToString();
 
+            //    if (DVCount >= (DV.Length - 1))
+            //        DVCount = 0;
+            //    else
+            //        DVCount++;
             //}
+            int soma = 0;
+            int resto = 0;
+            int[] peso = { 2 ,3,4,5,6,7};
+            int digitoRetorno;
 
-            return 0;
+            for (int i = 0; i < chave.Length; i++)
+            {
+                soma += peso[i % 6] * (int.Parse(chave.Substring(i, 1)));
+            }
+
+            resto = soma % 11;
+            if (resto == 0 || resto == 1)
+            {
+                digitoRetorno = 0;
+            }
+            else
+            {
+                digitoRetorno = 11 - resto;
+            }
+
+            return chave + digitoRetorno.ToString();
+
         }
         private bool ValidarForm()
         {
